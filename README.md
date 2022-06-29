@@ -1,4 +1,4 @@
-# devops-pipeline-step-functions-example
+# mutant-step-functions
 
 [![aws-cli](https://img.shields.io/badge/awscli-v1.17.X-orange.svg)](https://aws.amazon.com/cli/)
 [![java](https://img.shields.io/badge/java-v11.0.X-red.svg)](https://www.oracle.com/java/technologies/javase-downloads.html)
