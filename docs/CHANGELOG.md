@@ -1,1 +1,1 @@
-# CCCNT-558 state machine into stage
+# INI state machine into stage
