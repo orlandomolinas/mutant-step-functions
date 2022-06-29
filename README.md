@@ -3,19 +3,6 @@
 [![aws-cli](https://img.shields.io/badge/awscli-v1.17.X-orange.svg)](https://aws.amazon.com/cli/)
 [![java](https://img.shields.io/badge/java-v11.0.X-red.svg)](https://www.oracle.com/java/technologies/javase-downloads.html)
 
->A simple aws state machine project to test ADL DevOps AWS Step Function Pipelines.
->
->Developed with all :heart: in the world by ADL DevOps team
-
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [Quickstart](#quickstart)
-- [Testing](#testing)
-- [Deploy](#deploy)
-- [Contributing](#contributing)
-- [Further Reading / Useful Links](#further-reading--useful-links)
-
 ## Prerequisites
 
 You will need the following things properly installed on your computer:
