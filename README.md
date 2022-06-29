@@ -40,12 +40,6 @@ For deployment, run the command `aws stepfunctions update-state-machine --state-
 
 ## Contributing
 
-If you find this repo useful here's how you can help:
-
-1. Send a Pull Request with your awesome new features and bug fixes
-2. Wait for a Coronita :beer: you deserve it.
-
-## Further Reading / Useful Links
 
 * [Setting up aws step functions locally](https://docs.aws.amazon.com/step-functions/latest/dg/sfn-local.html)
 * [You can set up your step functions local environment with docker too!](https://docs.aws.amazon.com/step-functions/latest/dg/sfn-local-docker.html)
