@@ -1,0 +1,7 @@
+version: '1'
+
+apiGW:
+  stage: 'v1'
+
+state-machine:
+  name: 'isMutantMachine'

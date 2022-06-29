@@ -1,0 +1,58 @@
+{
+  "Comment": "Get Mutant tasks",
+  "StartAt": "Get-Mutant",
+  "States": {
+    "Get-Mutant": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:XX:function:is-mutant",
+      "InputPath": "$.adn",
+      "ResultPath": "$.result",
+      "ResultSelector": {
+        "isMutant.$": "$",
+        "adn.$": "$$.Execution.Input.adn"
+      },
+      "Next": "put-Db",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "NotifyError",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "put-Db": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:us-east-1:XX:function:register",
+      "InputPath": "$.result",
+      "ResultPath": "$",
+      "Next": "NotifyOK",
+      "Catch": [
+        {
+          "ErrorEquals": [
+            "States.ALL"
+          ],
+          "Next": "NotifyError",
+          "ResultPath": "$.error"
+        }
+      ]
+    },
+    "NotifyOK": {
+      "Type": "Pass",
+      "Result": {
+        "statusCode": 200,
+        "message": "OK"
+      },
+      "End": true
+    },
+    "NotifyError": {
+      "Type": "Pass",
+      "Result": {
+        "statusCode": 403,
+        "message": "Forbidden"
+      },
+      "End": true
+    }
+  }
+}

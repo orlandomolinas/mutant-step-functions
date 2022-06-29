@@ -1,0 +1,170 @@
+{
+  "swagger":"2.0",
+  "info":{
+     "description":"Your first API with Amazon API Gateway. This is a sample API that integrates via HTTP with our demo Store endpoints",
+     "version":"2022-06-28T23:33:54Z",
+     "title":"Mutant"
+  },
+  "host":"mne2pdqrsc.execute-api.us-east-1.amazonaws.com",
+  "basePath":"/v1",
+  "schemes":[
+     "https"
+  ],
+  "paths":{
+     "/lambda/stats":{
+        "get":{
+           "description":"ratio mutants",
+           "consumes":[
+              "application/json"
+           ],
+           "produces":[
+              "application/json"
+           ],
+           "parameters":[
+              
+           ],
+           "responses":{
+              "200":{
+                 "description":"200 response",
+                 "schema":{
+                    "$ref":"#/definitions/Empty"
+                 },
+                 "headers":{
+                    "Access-Control-Allow-Origin":{
+                       "type":"string"
+                    }
+                 }
+              },
+              "500":{
+                 "description":"500 response",
+                 "schema":{
+                    "$ref":"#/definitions/Empty"
+                 },
+                 "headers":{
+                    "Access-Control-Allow-Origin":{
+                       "type":"string"
+                    }
+                 }
+              },
+              "401":{
+                 "description":"401 response",
+                 "schema":{
+                    "$ref":"#/definitions/Empty"
+                 },
+                 "headers":{
+                    "Access-Control-Allow-Origin":{
+                       "type":"string"
+                    }
+                 }
+              },
+              "403":{
+                 "description":"403 response",
+                 "schema":{
+                    "$ref":"#/definitions/Empty"
+                 },
+                 "headers":{
+                    "Access-Control-Allow-Origin":{
+                       "type":"string"
+                    }
+                 }
+              }
+           },
+           "security":[
+              
+           ],
+           "x-amazon-apigateway-integration":{
+              "uri":"arn:aws:lambda:us-east-1:156090219506:function:report/invocations",
+              "responses":{
+                 "default":{
+                    "statusCode":"200"
+                 }
+              },
+              "passthroughBehavior":"when_no_match",
+              "httpMethod":"POST",
+              "contentHandling":"CONVERT_TO_TEXT",
+              "type":"aws_proxy"
+           }
+        }
+     },
+     "/mutant":{
+        "post":{
+           "description":"exceute machine",
+           "consumes":[
+              "application/json"
+           ],
+           "produces":[
+              "application/json"
+           ],
+           "parameters":[
+              
+           ],
+           "responses":{
+              "200":{
+                 "description":"200 response",
+                 "schema":{
+                    "$ref":"#/definitions/Empty"
+                 },
+                 "headers":{
+                    "Access-Control-Allow-Origin":{
+                       "type":"string"
+                    }
+                 }
+              },
+              "500":{
+                 "description":"500 response",
+                 "schema":{
+                    "$ref":"#/definitions/Empty"
+                 },
+                 "headers":{
+                    "Access-Control-Allow-Origin":{
+                       "type":"string"
+                    }
+                 }
+              },
+              "401":{
+                 "description":"401 response",
+                 "schema":{
+                    "$ref":"#/definitions/Empty"
+                 },
+                 "headers":{
+                    "Access-Control-Allow-Origin":{
+                       "type":"string"
+                    }
+                 }
+              },
+              "403":{
+                 "description":"403 response",
+                 "schema":{
+                    "$ref":"#/definitions/Empty"
+                 },
+                 "headers":{
+                    "Access-Control-Allow-Origin":{
+                       "type":"string"
+                    }
+                 }
+              }
+           },
+           "security":[
+              
+           ],
+           "x-amazon-apigateway-integration":{
+              "uri":"arn:aws:lambda:us-east-1:XX:function:execute-machine/invocations",
+              "responses":{
+                 "default":{
+                    "statusCode":"200"
+                 }
+              },
+              "passthroughBehavior":"when_no_match",
+              "httpMethod":"POST",
+              "contentHandling":"CONVERT_TO_TEXT",
+              "type":"aws_proxy"
+           }
+        }
+     }
+  },
+  "definitions":{
+     "Empty":{
+        "type":"object"
+     }
+  }
+}
